@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace SimpleLogin
@@ -16,6 +12,19 @@ namespace SimpleLogin
         public MainPage()
         {
             InitializeComponent();
+            Content.BackgroundColor = Color.FromHex("#7698f3");
+            BindingContext = GetViewModelAsync();
+        }
+
+        private LoginViewModel GetViewModelAsync()
+        {
+            var model = new LoginViewModel(this);
+
+            return model;
+        }
+
+        private  void Button_OnClicked(object sender, EventArgs e)
+        {
         }
     }
 }
